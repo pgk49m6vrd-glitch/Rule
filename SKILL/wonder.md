@@ -9,7 +9,21 @@ Ce skill définit la doctrine pour interagir efficacement avec **Wonder MCP**, l
 
 ---
 
-## 2. Phase Initiale & Ingestion du Contexte (Obligatoire)
+## 1. Phase Initiale & Ingestion du Contexte (Obligatoire)
+
+Si le MCP n'est pas disponible tu peux l'installer en utilisant le code suivant : 
+
+{
+  "mcpServers": {
+    "wonder": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.wonder.so/mcp"
+      ]
+    }
+  }
+}
 
 Avant toute action de génération ou de modification de design, l'agent doit suivre cette séquence d'initialisation :
 
@@ -28,7 +42,7 @@ Avant toute action de génération ou de modification de design, l'agent doit su
 
 ---
 
-## 4. Formats & Directives IR (Intermediate Representation) Stricts
+## 2. Formats & Directives IR (Intermediate Representation) Stricts
 
 Lorsque l'agent formule du code JSX / IR pour Wonder :
 
@@ -43,7 +57,7 @@ Lorsque l'agent formule du code JSX / IR pour Wonder :
 
 ---
 
-## 5. Stratégie de Duplication (Preserve the Original)
+## 3. Stratégie de Duplication (Preserve the Original)
 
 - **Modifications substantielles** (Restylage complet, refonte de layout, réécriture de section) :
   - Dupliquer d'abord l'artboard avec `duplicate_elements(newArtboard=true)`.
@@ -54,7 +68,7 @@ Lorsque l'agent formule du code JSX / IR pour Wonder :
 
 ---
 
-## 6. Workflow de Finalisation Stricte
+## 4. Workflow de Finalisation Stricte
 
 À la fin de la séquence d'édition :
 1. Effectuer une vérification visuelle finale avec `take_screenshot`.
